@@ -85,9 +85,9 @@
             <!-- résumé panier-->
 
             <section class="row mt-4 h-100">
-                <h1 class="col-12">Votre panier</h1>
-                <div class="col-6 my-auto border bg-light">
-                    <table class="table">
+                <div class="col-6 my-auto">
+                    <h1 class="col-12 pb-5">Votre panier</h1>
+                    <table class="table border bg-light">
                         <thead>
                             <tr>
                                 <th scope="col">Produit</th>
@@ -109,12 +109,12 @@
                     </table>
                 </div>
                 <!-- formulaire données correctes et bien formatées-->
-                <div class="col-6 bg-light">
+                <div class="col-6 bg-light mt-4">
                     <form action="">
                         <div class="form-group">
                             <div class="form-row">
                                 <div class="col">
-                                    <label for="Name">Nom</label>
+                                    <label for="Name" class="mt-2">Nom</label>
                                     <input
                                         type="text"
                                         class="form-control font-italic"
@@ -124,7 +124,9 @@
                                     />
                                 </div>
                                 <div class="col">
-                                    <label for="Surname">Prénom</label>
+                                    <label for="Surname" class="mt-2"
+                                        >Prénom</label
+                                    >
                                     <input
                                         type="text"
                                         class="form-control font-italic"
@@ -135,7 +137,9 @@
                                 </div>
                             </div>
                             <div class="form-row">
-                                <label for="Mail">Adresse mail</label>
+                                <label for="Mail" class="mt-2"
+                                    >Adresse mail</label
+                                >
                                 <input
                                     type="email"
                                     class="form-control font-italic"
@@ -146,7 +150,9 @@
                             </div>
                             <div class="form-row">
                                 <div class="col">
-                                    <label for="Adress">Adresse postale</label>
+                                    <label for="Adress" class="mt-2"
+                                        >Adresse postale</label
+                                    >
                                     <input
                                         type="text"
                                         class="form-control font-italic"
@@ -156,7 +162,9 @@
                                     />
                                 </div>
                                 <div class="col-4">
-                                    <label for="Surname">Code postal</label>
+                                    <label for="Surname" class="mt-2"
+                                        >Code postal</label
+                                    >
                                     <input
                                         type="number"
                                         class="form-control font-italic"
@@ -167,7 +175,7 @@
                                 </div>
                             </div>
                             <div class="form-row">
-                                <label for="Address2"
+                                <label for="Address2" class="mt-2"
                                     >Complément d'adresse</label
                                 >
                                 <input
@@ -178,9 +186,16 @@
                                     placeholder="Code bâtiment, étage, numéro d'appartement..."
                                 />
                             </div>
-                            <button class="btn btn-dark mt-3">
-                                Valider la commande
-                            </button>
+                            <div class="text-center">
+                                <button class="btn btn-success mt-3">
+                                    <a
+                                        href="commande.html"
+                                        class="stretched-link"
+                                    >
+                                    </a>
+                                    Valider la commande
+                                </button>
+                            </div>
                         </div>
                     </form>
                 </div>

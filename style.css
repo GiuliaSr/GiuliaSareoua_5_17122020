@@ -1,4 +1,4 @@
-main .hero {
+main .bg-pink {
   background-color: #f7f0f5;
 }
 
@@ -41,6 +41,10 @@ img {
 .options {
   -ms-flex-pack: distribute;
       justify-content: space-around;
+}
+
+.bg-pink {
+  background-color: #f7f0f5;
 }
 
 .card_container {
