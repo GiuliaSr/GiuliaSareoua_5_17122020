@@ -1,0 +1,33 @@
+.card_container {
+    height: auto;
+}
+.card {
+    border-radius: 1.2rem;
+    overflow: hidden;
+    transition: 250ms ease-in;
+    border: none;
+
+    img {
+        object-fit: cover;
+        height: 10rem;
+    }
+    h3 {
+        font-size: 1.2rem;
+        font-family: "belligerent_madnessregular";
+        font-style: normal;
+        font-weight: bold;
+    }
+    h5 {
+        font-size: 1rem;
+    }
+
+    &:hover {
+        transform: scale(1.1);
+
+        .card-btn {
+            background-color: $primary;
+            color: $secondary;
+            font-weight: bold;
+        }
+    }
+}

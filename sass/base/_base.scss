@@ -1,0 +1,22 @@
+main .hero {
+    background-color: lighten($color: #f3e9f1, $amount: 2);
+}
+body {
+    margin-top: -2rem;
+
+    h2 {
+        font-size: 2rem;
+    }
+    h1,
+    h2 {
+        font-family: "belligerent_madnessregular";
+        font-style: italic;
+    }
+    h1 {
+        font-size: 3.5rem;
+    }
+    h3 {
+        font-size: 1.2rem;
+        font-style: italic;
+    }
+}
