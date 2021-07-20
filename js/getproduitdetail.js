@@ -28,10 +28,10 @@ fetch(url + "/" + urlParams.get("id"))
             "detailCamera"
         ).innerHTML += `<img src="${camera.imageUrl}" alt="" class="col-3" />
              <div class="pl-3 pr-3 col-4 my-auto">
-                 <h3 class="">${camera.name}</h3>
-                 <h5 class="text-secondary mb-3">${camera.price}€</h5>
+                 <h3 class="" id="productName">${camera.name}</h3>
+                 <h5 class="text-secondary mb-3" id="productPrice">${camera.price}€</h5>
     
-                 <p>
+                 <p id="productDescription">
                  ${camera.description}
                  </p>
              </div>
@@ -47,7 +47,7 @@ fetch(url + "/" + urlParams.get("id"))
                      >Plusieurs choix d'objectifs disponibles! <br />
                      Choisissez la taille qui vous convient</small
                  >
-                 <div class="text-center">
+                 <div class="text-center" >
                      <a
                          href="panier.html"
                          class="btn btn-success col-7 mt-4"
