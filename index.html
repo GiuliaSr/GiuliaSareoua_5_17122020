@@ -1,20 +1,11 @@
 <!DOCTYPE html>
-
 <html lang="fr">
-      <head>
-            
+     <head>
         <meta charset="utf-8" />
-
-            
         <meta
             name="viewport"
             content="width=device-width, initial-scale=1, shrink-to-fit=no"
         />
-
-            
-        <!-- Bootstrap CSS -->
-
-            
         <link
             rel="stylesheet"
             href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
@@ -26,60 +17,14 @@
             rel="stylesheet"
             href="Fonts/Belligerent-Madness-fontfacekit (1)/web fonts/belligerentmadness_regular_macroman/stylesheet.css"
         />
-
-            
+          
         <title>Orinoco</title>
-
           
     </head>
 
       
     <body>
-                 <!-- Optional JavaScript -->
-
-            <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-
-         <!-- HEADER-->
-        <header class="or-header bg-dark">
-            <div class="container hd-container">
-                <div class="row bg-dark">
-                    <nav class="col navbar navbar-expand-lg navbar-dark">
-                        <a href="" class="navbar-brand">
-                            <img
-                                src="img/logo-blanc.png"
-                                width="20%"
-                                alt="Logo d'Orinoco"
-                            />
-                        </a>
-                        <button
-                            class="navbar-toggler"
-                            type="button"
-                            data-toggle="collapse"
-                            data-target="#navbarContent"
-                        >
-                            <span class="navbar-toggler-icon"></span>
-                        </button>
-                        <div
-                            id="navbarContent"
-                            class="collapse navbar-collapse"
-                        >
-                            <ul class="navbar-nav">
-                                <li class="nav-item active">
-                                    <a href="index.html" class="nav-link"
-                                        >Accueil</a
-                                    >
-                                </li>
-                                <li class="nav-item">
-                                    <a href="panier.html" class="nav-link"
-                                        >Panier</a
-                                    >
-                                </li>
-                            </ul>
-                        </div>
-                    </nav>
-                </div>
-            </div>
-        </header>
+        <header id="header" class="or-header bg-dark"></header>
 
         <main class="main">
             <section class="bg-pink">
@@ -171,199 +116,42 @@
 
             <section id="produits" class="container p-0">
                 <h2 class="p-0 mb-4">Nos produits à la vente</h2>
-                 <div class="row" id="cameras"></div>
-                <!-- <div class="row">
+                <template class="row" id="cameras">
                     <article class="col-md-6 col-lg card mr-3 p-0 shadow">
-                        <a href="produit-1.html" class="stretched-link"></a>
+                        <a href="" class="stretched-link" id="camera_link"></a>
                         <img
-                            src="img/vcam_1.jpg"
+                            src=""
                             alt=""
                             class="card-img-top mb-2"
+                            id="camera_img"
                         />
                         <div class="pl-3 pr-3">
-                            <h3 class="card-title card_title">Zurss 50S</h3>
+                            <h3
+                                class="card-title card_title"
+                                id="camera_name"
+                            ></h3>
                             <h5
                                 class="
                                     card-subtitle card_subtitle
                                     text-secondary
                                     mb-3
                                 "
-                            >
-                                49900€
-                            </h5>
+                                id="camera_price"
+                            ></h5>
 
-                            <p class="card-text card_text">
-                                Lorem ipsum dolor sit amet, consectetur
-                                adipisicing elit, sed do eiusmod tempor
-                                incididunt ut labore et dolore magna aliqua.
-                            </p>
+                            <p class="card-text card_text" id="camera_desc"></p>
                             <button class="btn btn-outline-dark mb-3 card-btn">
                                 En savoir +
                             </button>
                         </div>
                     </article>
-                    <article class="col-md-6 col-lg card mr-3 p-0 shadow">
-                        <a href="produit-2.html" class="stretched-link"> </a>
-                        <img
-                            src="img/vcam_2.jpg"
-                            alt=""
-                            class="card-img-top mb-2"
-                        />
-                        <div class="pl-3 pr-3">
-                            <h3 class="card-title card_title">Hirsch 400DTS</h3>
-                            <h5
-                                class="
-                                    card-subtitle card_subtitle
-                                    text-secondary
-                                    mb-3
-                                "
-                            >
-                                309900€
-                            </h5>
-
-                            <p class="card-text card_text">
-                                Lorem ipsum dolor sit amet, consectetur
-                                adipisicing elit, sed do eiusmod tempor
-                                incididunt ut labore et dolore magna aliqua.
-                            </p>
-                            <button class="btn btn-outline-dark mb-3 card-btn">
-                                En savoir +
-                            </button>
-                        </div>
-                    </article>
-                    <article class="col-md-6 col-lg card mr-3 p-0 shadow">
-                        <a href="produit-3.html" class="stretched-link"></a>
-                        <img
-                            src="img/vcam_3.jpg"
-                            alt=""
-                            class="card-img-top mb-2"
-                        />
-                        <div class="pl-3 pr-3">
-                            <h3 class="card-title card_title">Franck JS 105</h3>
-                            <h5
-                                class="
-                                    card-subtitle card_subtitle
-                                    text-secondary
-                                    mb-3
-                                "
-                            >
-                                209900€
-                            </h5>
-
-                            <p class="card-text card_text">
-                                Lorem ipsum dolor sit amet, consectetur
-                                adipisicing elit, sed do eiusmod tempor
-                                incididunt ut labore et dolore magna aliqua.
-                            </p>
-                            <button class="btn btn-outline-dark mb-3 card-btn">
-                                En savoir +
-                            </button>
-                        </div>
-                    </article>
-                    <article class="col-md-6 col-lg card mr-3 p-0 shadow">
-                        <a href="produit-4.html" class="stretched-link"></a>
-                        <img
-                            src="img/vcam_4.jpg"
-                            alt=""
-                            class="card-img-top mb-2"
-                        />
-                        <div class="pl-3 pr-3">
-                            <h3 class="card-title card_title">Kuros TTS</h3>
-                            <h5
-                                class="
-                                    card-subtitle card_subtitle
-                                    text-secondary
-                                    mb-3
-                                "
-                            >
-                                159900€
-                            </h5>
-
-                            <p class="card-text card_text">
-                                Lorem ipsum dolor sit amet, consectetur
-                                adipisicing elit, sed do eiusmod tempor
-                                incididunt ut labore et dolore magna aliqua.
-                            </p>
-                            <button class="btn btn-outline-dark mb-3 card-btn">
-                                En savoir +
-                            </button>
-                        </div>
-                    </article>
-                    <article class="col-md-6 col-lg card p-0 shadow">
-                        <a href="produit-5.html" class="stretched-link"></a>
-                        <img
-                            src="img/vcam_5-2.jpg"
-                            alt=""
-                            class="card-img-top mb-2"
-                        />
-                        <div class="pl-3 pr-3">
-                            <h3 class="card-title card_title">Katatone</h3>
-                            <h5
-                                class="
-                                    card-subtitle card_subtitle
-                                    text-secondary
-                                    mb-3
-                                "
-                            >
-                                59900€
-                            </h5>
-
-                            <p class="card-text card_text">
-                                Lorem ipsum dolor sit amet, consectetur
-                                adipisicing elit, sed do eiusmod tempor
-                                incididunt ut labore et dolore magna aliqua.
-                            </p>
-                            <button class="btn btn-outline-dark mb-3 card-btn">
-                                En savoir +
-                            </button>
-                        </div>
-                    </article>
-                </div> -->
+                </template>
             </section>
 
-            <footer class="bg-dark mt-5 p-4">
-                <div class="container">
-                    <div class="text-center mb-3">
-                        <img
-                            src="img/logo-blanc.png"
-                            alt="Logo d'Orinoco"
-                            class="w-25"
-                        />
-                    </div>
-                    <div class="row">
-                        <div class="col">
-                            <ul class="list-inline text-center text-light">
-                                <li class="list-inline-item">
-                                    <a
-                                        href=""
-                                        class="text-light text-decoration-none"
-                                        >À propos</a
-                                    >
-                                </li>
-                                <li class="list-inline-item">&middot;</li>
-                                <li class="list-inline-item">
-                                    <a
-                                        href=""
-                                        class="text-light text-decoration-none"
-                                        >Vie privée</a
-                                    >
-                                </li>
-                                <li class="list-inline-item">&middot;</li>
-                                <li class="list-inline-item">
-                                    <a
-                                        href=""
-                                        class="text-light text-decoration-none"
-                                        >Conditions d'utilisation</a
-                                    >
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </footer>
+            <footer class="bg-dark mt-5 p-4" id="footer"></footer>
         </main>
-
-            
+        <script src="./js/index.js"></script>
+        <script src="./js/header.js"></script>
         <script
             src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
             integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
@@ -383,7 +171,7 @@
             integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
             crossorigin="anonymous"
         ></script>
-        <script src="./js/getproduit.js"></script>
+
           
     </body>
 </html>

@@ -40,46 +40,7 @@
             <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 
          <!-- HEADER-->
-        <header class="or-header bg-dark">
-            <div class="container hd-container">
-                <div class="row bg-dark">
-                    <nav class="col navbar navbar-expand-lg navbar-dark">
-                        <a href="" class="navbar-brand">
-                            <img
-                                src="img/logo-blanc.png"
-                                width="20%"
-                                alt="Logo d'Orinoco"
-                            />
-                        </a>
-                        <button
-                            class="navbar-toggler"
-                            type="button"
-                            data-toggle="collapse"
-                            data-target="#navbarContent"
-                        >
-                            <span class="navbar-toggler-icon"></span>
-                        </button>
-                        <div
-                            id="navbarContent"
-                            class="collapse navbar-collapse"
-                        >
-                            <ul class="navbar-nav">
-                                <li class="nav-item">
-                                    <a href="index.html" class="nav-link"
-                                        >Accueil</a
-                                    >
-                                </li>
-                                <li class="nav-item">
-                                    <a href="" class="nav-link active"
-                                        >Panier</a
-                                    >
-                                </li>
-                            </ul>
-                        </div>
-                    </nav>
-                </div>
-            </div>
-        </header>
+        <header id="header"></header>
 
         <main class="container">
             <!-- résumé panier-->
@@ -88,7 +49,7 @@
                 <div class="col-6 my-auto">
                     <h1 class="col-12 pb-5">Votre panier</h1>
                     <table class="table border bg-light">
-                        <thead>
+                        <thead id="cart-card_recap">
                             <tr>
                                 <th scope="col" colspan="3" class="text-center">
                                     Produit
@@ -98,14 +59,14 @@
                                 <th scope="col">Quantité</th>
                             </tr>
                         </thead>
-                        <tbody>
-                            <tr>
-                                <td id="productImg"></td>
-                                <td id="productName"></td>
-                                <td id="productDescription"></td>
-                                <td id="productLense"></td>
-                                <td id="productPrice"></td>
-                                <td id="productQte"></td>
+                        <tbody id="display_articles">
+                            <tr id="article_row">
+                                <td id="camera_img"></td>
+                                <td id="camera_name"></td>
+                                <td id="camera_desc"></td>
+                                <td id="camera_lense"></td>
+                                <td id="camera_price"></td>
+                                <td id="camera_qty"></td>
                             </tr>
                             <tr>
                                 <td colspan="2" class="text-right">Total</td>
@@ -120,43 +81,51 @@
                         <div class="form-group">
                             <div class="form-row">
                                 <div class="col">
-                                    <label for="Name" class="mt-2">Nom</label>
+                                    <label for="lastname" class="mt-2"
+                                        >Nom</label
+                                    >
                                     <input
                                         type="text"
                                         class="form-control font-italic"
-                                        id="exampleInputName"
+                                        id="lastname"
                                         aria-describedby="nameHelp"
                                         placeholder="Dupont"
+                                        required
+                                        name="userlastname"
                                     />
                                 </div>
                                 <div class="col">
-                                    <label for="Surname" class="mt-2"
+                                    <label for="name" class="mt-2"
                                         >Prénom</label
                                     >
                                     <input
                                         type="text"
                                         class="form-control font-italic"
-                                        id="exampleInputsurName"
+                                        id="name"
                                         aria-describedby="surnameHelp"
                                         placeholder="Jeanne"
+                                        required
+                                        name="username"
                                     />
                                 </div>
                             </div>
                             <div class="form-row">
-                                <label for="Mail" class="mt-2"
+                                <label for="mail" class="mt-2"
                                     >Adresse mail</label
                                 >
                                 <input
                                     type="email"
                                     class="form-control font-italic"
-                                    id="exampleInputMail"
+                                    id="mail"
                                     aria-describedby="mailHelp"
                                     placeholder="jeanne.dupont@gmail.com"
+                                    required
+                                    name="usermail"
                                 />
                             </div>
                             <div class="form-row">
                                 <div class="col">
-                                    <label for="Adress" class="mt-2"
+                                    <label for="adress" class="mt-2"
                                         >Adresse postale</label
                                     >
                                     <input
@@ -165,23 +134,27 @@
                                         id="exampleInputAdress"
                                         aria-describedby="adressHelp"
                                         placeholder="145 rue de Strasbourg"
+                                        required
+                                        name="useradress"
                                     />
                                 </div>
                                 <div class="col-4">
-                                    <label for="Surname" class="mt-2"
+                                    <label for="postal" class="mt-2"
                                         >Code postal</label
                                     >
                                     <input
                                         type="number"
                                         class="form-control font-italic"
-                                        id="exampleInputPostal"
+                                        id="postal"
                                         aria-describedby="postalHelp"
                                         placeholder="44000"
+                                        required
+                                        name="userpostal"
                                     />
                                 </div>
                             </div>
                             <div class="form-row">
-                                <label for="Address2" class="mt-2"
+                                <label for="address2" class="mt-2"
                                     >Complément d'adresse</label
                                 >
                                 <input
@@ -190,15 +163,16 @@
                                     id="exampleInputAddress2"
                                     aria-describedby="address2Help"
                                     placeholder="Code bâtiment, étage, numéro d'appartement..."
+                                    required
+                                    name="useradress2"
                                 />
                             </div>
+                            <div class="erreur"></div>
                             <div class="text-center">
-                                <button class="btn btn-success mt-3">
-                                    <a
-                                        href="commande.html"
-                                        class="stretched-link"
-                                    >
-                                    </a>
+                                <button
+                                    class="btn btn-success mt-3"
+                                    id="submit"
+                                >
                                     Valider la commande
                                 </button>
                             </div>
@@ -240,9 +214,11 @@
                 </div>
             </div>
         </footer>
-        <script src="./js/getproduitdetail.js"></script>
-         
-        <script src="./js/panier.js"></script>
+        <!-- <script src="./js/getproduitdetail.js"></script> -->
+        <script src="./js/cart.js"></script>
+        <script src="./js/header.js"></script>
+        <script src="./js/footer.js"></script>
+        <!-- <script src="./js/getproduitdetail.js"></script> -->
         <script
             src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
             integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
