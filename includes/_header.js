@@ -2,7 +2,7 @@ document.getElementById("header").innerHTML = `
 <div class="container hd-container">
     <div class="row bg-dark">
         <nav class="col navbar navbar-expand-lg navbar-dark">
-            <a href="" class="navbar-brand">
+            <a href="index.html" class="navbar-brand">
                 <img
                     src="img/logo-blanc.png"
                     width="20%"
@@ -27,8 +27,8 @@ document.getElementById("header").innerHTML = `
                             >Accueil</a
                         >
                     </li>
-                    <li class="nav-item">
-                        <a href="panier.html" class="nav-link"
+                    <li class="nav-item" id="cartOk">
+                        <a href="cart.html" class="nav-link"
                             >Panier</a
                         >
                     </li>

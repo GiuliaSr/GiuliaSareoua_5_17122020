@@ -32,52 +32,10 @@
 
           
     </head>
-
       
     <body>
-                 <!-- Optional JavaScript -->
-
-            <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-
-         <!-- HEADER-->
-        <header class="or-header bg-dark">
-            <div class="container hd-container">
-                <div class="row bg-dark">
-                    <nav class="col navbar navbar-expand-lg navbar-dark">
-                        <a href="index.html" class="navbar-brand">
-                            <img
-                                src="img/logo-blanc.png"
-                                width="20%"
-                                alt="Logo d'Orinoco"
-                            />
-                        </a>
-                        <button
-                            class="navbar-toggler"
-                            type="button"
-                            data-toggle="collapse"
-                            data-target="#navbarContent"
-                        >
-                            <span class="navbar-toggler-icon"></span>
-                        </button>
-                        <div
-                            id="navbarContent"
-                            class="collapse navbar-collapse"
-                        >
-                            <ul class="navbar-nav">
-                                <li class="nav-item">
-                                    <a href="index.html" class="nav-link"
-                                        >Accueil</a
-                                    >
-                                </li>
-                                <li class="nav-item">
-                                    <a href="" class="nav-link">Panier</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </nav>
-                </div>
-            </div>
-        </header>
+          
+        <header id="header" class="or-header bg-dark"></header>
 
         <main class="container">
             <section class="jumbotron bg-pink mt-5">
@@ -86,44 +44,24 @@
                     Toute l'équipe d'Orinoco vous remercie d'avoir passé
                     commande chez nous!
                 </h3>
+                <h4 id="confirmationId">Votre numéro de commande :</h4>
             </section>
             <section class=""></section>
         </main>
-        <footer class="bg-dark mt-5 p-4">
-            <div class="container">
-                <div class="row">
-                    <div class="col">
-                        <ul class="list-inline text-center text-light">
-                            <li class="list-inline-item">
-                                <a
-                                    href=""
-                                    class="text-light text-decoration-none"
-                                    >À propos</a
-                                >
-                            </li>
-                            <li class="list-inline-item">&middot;</li>
-                            <li class="list-inline-item">
-                                <a
-                                    href=""
-                                    class="text-light text-decoration-none"
-                                    >Vie privée</a
-                                >
-                            </li>
-                            <li class="list-inline-item">&middot;</li>
-                            <li class="list-inline-item">
-                                <a
-                                    href=""
-                                    class="text-light text-decoration-none"
-                                    >Conditions d'utilisation</a
-                                >
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </footer>
+        <footer id="footer" class="bg-dark mt-5 p-4"></footer>
 
-            
+         
+        <script src="./includes/_header.js"></script>
+        <script src="./includes/_footer.js"></script>
+        <script>
+            let confirmationMessage = document.getElementById("confirmationId");
+            const queryString = window.location.search;
+            console.log(queryString);
+            const urlParams = new URLSearchParams(queryString);
+
+            let orderId = urlParams.get("orderId");
+            confirmationMessage.innerHTML += orderId;
+        </script>
         <script
             src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
             integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"

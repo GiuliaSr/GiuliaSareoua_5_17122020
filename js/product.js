@@ -27,39 +27,7 @@ fetch(url + "/" + idProduct)
             camera.price + "€";
         document.getElementById("camera_desc").textContent = camera.description;
         document.getElementById("camera_lenses").innerHTML = options;
-        // document.getElementById(
-        //     "detailCamera"
-        // ).innerHTML += `<img src="${camera.imageUrl}" alt="" class="col-3" id="productImg" />
-        //      <div class="pl-3 pr-3 col-4 my-auto">
-        //          <h3 class="" id="productName">${camera.name}</h3>
-        //          <h5 class="text-secondary mb-3" id="productPrice">${camera.price}€</h5>
 
-        //          <p id="productDescription">
-        //          ${camera.description}
-        //          </p>
-        //      </div>
-
-        //      <div class="col bg-light pt-3 pb-3 mr-3">
-        //          <h3 class="mb-3">Personnalisez votre appareil!</h3>
-
-        //          <select class="form-control col-7 mb-3">
-        //              ${options}
-        //          </select>
-
-        //          <small id="lensesHelp" class="form-text text-muted"
-        //              >Plusieurs choix d'objectifs disponibles! <br />
-        //              Choisissez la taille qui vous convient</small
-        //          >
-        //          <div class="text-center" >
-        //              <a
-        //                  href="panier.html"
-        //                  class="btn btn-success col-7 mt-4"
-        //              >
-        //                  Ajouter au panier
-        //              </a>
-        //          </div>
-        //      </div>
-        //       `;
         addToCard();
     });
 
@@ -69,14 +37,10 @@ function addToCard() {
     let cameraPrice = document.getElementById("camera_price");
     let cameraImg = document.getElementById("camera_img").src;
     let cameraDesc = document.getElementById("camera_desc");
+    let displayNumber = document.getElementById("cartok");
+    console.log(displayNumber);
 
     addToCard_btn.addEventListener("click", function () {
-        console.log(camera_img);
-        console.log(camera_desc.textContent);
-        console.log(camera_name.textContent);
-        console.log(camera_price.textContent);
-        console.log(idProduct);
-
         let index = rechercherPanier(idProduct);
 
         if (index == null && index == undefined) {
@@ -115,13 +79,3 @@ function rechercherPanier(id) {
         }
     }
 }
-
-// implémentation du panier
-// let panierImg = document.getElementById("productImg");
-// let panierName = document.getElementById("productName");
-// console.log(panierImg);
-// console.log(panierName.textContent);
-
-// if (localStorage.getItem("panier")) {
-//     updatePanier();
-// }

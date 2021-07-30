@@ -35,47 +35,29 @@
 
       
     <body>
-                 <!-- Optional JavaScript -->
-
-            <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-
-         <!-- HEADER-->
-        <header id="header"></header>
+                
+        <header id="header" class="or-header bg-dark"></header>
 
         <main class="container">
-            <!-- résumé panier-->
-
             <section class="row mt-4 h-100">
                 <div class="col-6 my-auto">
                     <h1 class="col-12 pb-5">Votre panier</h1>
-                    <table class="table border bg-light">
+                    <table class="table border bg-light" id="table">
                         <thead id="cart-card_recap">
                             <tr>
-                                <th scope="col" colspan="3" class="text-center">
+                                <th scope="col" colspan="1" class="text-center">
                                     Produit
                                 </th>
-                                <th scope="col">Lentille</th>
                                 <th scope="col">Prix</th>
                                 <th scope="col">Quantité</th>
+                                <th scope="col">Total</th>
                             </tr>
                         </thead>
-                        <tbody id="display_articles">
-                            <tr id="article_row">
-                                <td id="camera_img"></td>
-                                <td id="camera_name"></td>
-                                <td id="camera_desc"></td>
-                                <td id="camera_lense"></td>
-                                <td id="camera_price"></td>
-                                <td id="camera_qty"></td>
-                            </tr>
-                            <tr>
-                                <td colspan="2" class="text-right">Total</td>
-                                <td id="totalPanier"></td>
-                            </tr>
-                        </tbody>
+                        <tbody id="display_articles"></tbody>
                     </table>
+                    <h2 class="col-12 pb-5" id="totalToPay">Total à payer :</h2>
                 </div>
-                <!-- formulaire données correctes et bien formatées-->
+
                 <div class="col-6 bg-light mt-4">
                     <form action="">
                         <div class="form-group">
@@ -131,7 +113,7 @@
                                     <input
                                         type="text"
                                         class="form-control font-italic"
-                                        id="exampleInputAdress"
+                                        id="adress"
                                         aria-describedby="adressHelp"
                                         placeholder="145 rue de Strasbourg"
                                         required
@@ -154,20 +136,18 @@
                                 </div>
                             </div>
                             <div class="form-row">
-                                <label for="address2" class="mt-2"
-                                    >Complément d'adresse</label
-                                >
+                                <label for="address2" class="mt-2">Ville</label>
                                 <input
                                     type="text"
                                     class="form-control font-italic"
-                                    id="exampleInputAddress2"
+                                    id="city"
                                     aria-describedby="address2Help"
-                                    placeholder="Code bâtiment, étage, numéro d'appartement..."
+                                    placeholder="Paris"
                                     required
-                                    name="useradress2"
+                                    name="usercity"
                                 />
                             </div>
-                            <div class="erreur"></div>
+
                             <div class="text-center">
                                 <button
                                     class="btn btn-success mt-3"
@@ -181,44 +161,12 @@
                 </div>
             </section>
         </main>
-        <footer class="bg-dark mt-5 p-4">
-            <div class="container">
-                <div class="row">
-                    <div class="col">
-                        <ul class="list-inline text-center text-light">
-                            <li class="list-inline-item">
-                                <a
-                                    href=""
-                                    class="text-light text-decoration-none"
-                                    >À propos</a
-                                >
-                            </li>
-                            <li class="list-inline-item">&middot;</li>
-                            <li class="list-inline-item">
-                                <a
-                                    href=""
-                                    class="text-light text-decoration-none"
-                                    >Vie privée</a
-                                >
-                            </li>
-                            <li class="list-inline-item">&middot;</li>
-                            <li class="list-inline-item">
-                                <a
-                                    href=""
-                                    class="text-light text-decoration-none"
-                                    >Conditions d'utilisation</a
-                                >
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </footer>
-        <!-- <script src="./js/getproduitdetail.js"></script> -->
+        <footer id="footer" class="bg-dark mt-5 p-4"></footer>
+
+        <script src="./includes/_header.js"></script>
+        <script src="./includes/_footer.js"></script>
         <script src="./js/cart.js"></script>
-        <script src="./js/header.js"></script>
-        <script src="./js/footer.js"></script>
-        <!-- <script src="./js/getproduitdetail.js"></script> -->
+
         <script
             src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
             integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
