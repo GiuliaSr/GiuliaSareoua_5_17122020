@@ -47,6 +47,10 @@ img {
   background-color: #f7f0f5;
 }
 
+.border-radius {
+  border-radius: 1rem;
+}
+
 .card_container {
   height: auto;
 }
@@ -83,7 +87,6 @@ img {
 
 .card:hover .card-btn {
   background-color: #f3e9f1;
-  color: #a478fc;
   font-weight: bold;
 }
 

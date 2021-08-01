@@ -3,7 +3,7 @@ document.getElementById("footer").innerHTML = `<div class="container">
     <img
         src="img/logo-blanc.png"
         alt="Logo d'Orinoco"
-        class="w-25"
+        width="20%"
     />
 </div>
 <div class="row">

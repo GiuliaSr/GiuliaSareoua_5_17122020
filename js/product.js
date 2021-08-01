@@ -22,6 +22,7 @@ fetch(url + "/" + idProduct)
         }
         console.log(options);
         document.getElementById("camera_img").src = camera.imageUrl;
+
         document.getElementById("camera_name").textContent = camera.name;
         document.getElementById("camera_price").textContent =
             camera.price + "€";
@@ -37,16 +38,15 @@ function addToCard() {
     let cameraPrice = document.getElementById("camera_price");
     let cameraImg = document.getElementById("camera_img").src;
     let cameraDesc = document.getElementById("camera_desc");
-    let displayNumber = document.getElementById("cartok");
-    console.log(displayNumber);
-
+    let imgUrl = cameraImg;
     addToCard_btn.addEventListener("click", function () {
         let index = rechercherPanier(idProduct);
 
+        console.log(imgUrl);
         if (index == null && index == undefined) {
             let product = {
                 id: idProduct,
-                img: camera_img,
+                img: imgUrl,
                 name: camera_name.textContent,
                 desc: camera_desc.textContent,
                 price: camera_price.textContent,
@@ -56,21 +56,13 @@ function addToCard() {
             panier.push(product);
         } else {
             console.log(idProduct);
+
             console.log(panier);
             panier[index].qte++;
         }
         localStorage.setItem("panier", JSON.stringify(panier));
     });
 }
-
-function updatePanier() {
-    // let objetLocalStorage = localStorage.getItem("panier");
-    // JSON.parse(objetLocalStorage);
-    // console.log(objetLocalStorage);
-    // let cameraName = objetLocalStorage.name;
-    // console.log(cameraName);
-}
-updatePanier();
 
 function rechercherPanier(id) {
     for (i = 0; i < panier.length; i++) {
