@@ -1,8 +1,9 @@
-let objectLocalStorage = JSON.parse(localStorage.getItem("panier"));
+let objectLocalStorage = JSON.parse(localStorage.getItem("cart"));
 let displayCart = document.getElementById("display_articles");
 let listPrice = [];
 const emptyCart = document.getElementById("emptyCart");
 const cartContent = document.getElementById("cart_content");
+
 main();
 function main() {
     displayArticle();
@@ -10,6 +11,7 @@ function main() {
     checkFormAndPostRequest();
     displayEmptyCartMsg();
 }
+
 // Ajout d'un message si le panier ne contient aucun article
 function displayEmptyCartMsg() {
     if (objectLocalStorage.length < 1) {
@@ -39,17 +41,11 @@ function displayArticle() {
         let cellQty = row.insertCell(3);
         cellQty.innerHTML = article.qte;
         cellQty.className = "align-middle";
-        // let cell1 = row.insertCell(0);
-        // cell1.innerHTML = article.name;
-        // let cell2 = row.insertCell(1);
-        // cell2.innerHTML = article.price;
-        // let cell3 = row.insertCell(2);
-        // cell3.innerHTML = article.qte;
         let cell4 = row.insertCell(4);
         cell4.className = "align-middle";
         let cell5 = row.insertCell(5);
         cell5.className = "align-middle";
-
+        // calcul du prix par ligne
         const totalQtyPrice = getTotalQtyPrice(article.qte, article.price);
         listPrice.push(totalQtyPrice); // on envoie les totaux des lignes dans le tableau pour les récupérer
         cell4.innerHTML = totalQtyPrice + "€"; // on met la fonction qui fait le calcul du total par ligne
@@ -63,7 +59,7 @@ function displayArticle() {
             } else {
                 objectLocalStorage.splice(article, 1);
             }
-            localStorage.setItem("panier", JSON.stringify(objectLocalStorage));
+            localStorage.setItem("cart", JSON.stringify(objectLocalStorage));
             location.reload();
         });
     });
@@ -82,10 +78,7 @@ function convertToPrice(price) {
 function getTotalQtyPrice(qty, price) {
     return qty * convertToPrice(price);
 }
-// tester si on lui envoie des entiers
-// tester si on lui envoie des nombres à virgules
-// tester si on lui envoie des numbers -
-// si chaîne de caractère = erreur
+
 // ici on va faire le calcul total de tous les éléments du panier
 function sum(listElements) {
     let total = 0;
@@ -96,20 +89,22 @@ function sum(listElements) {
     return total;
 }
 
+// fonction qui vérifie les champs du formulaire
 function checkFormAndPostRequest() {
     const submit = document.getElementById("submit");
     let inputLastName = document.getElementById("lastname");
     let inputName = document.getElementById("name");
     let inputMail = document.getElementById("mail");
-    console.log(inputMail.value);
+
     let inputAdress = document.getElementById("adress");
     let inputPostal = document.getElementById("postal");
     let inputCity = document.getElementById("city");
     let erreur = document.querySelector(".erreur");
 
+    // renvoie une alerte d'erreur si l'un de ces champs n'a pas de valeur
     submit.addEventListener("click", (e) => {
         e.preventDefault();
-        console.log(e);
+
         if (
             !inputLastName.value ||
             !inputName.value ||
@@ -125,12 +120,11 @@ function checkFormAndPostRequest() {
             alert("Veuillez renseigner une adresse mail correcte");
             return;
         } else {
-            console.log(1);
             let productsBought = objectLocalStorage.map((article) => {
                 return article.id;
             });
             // productsBought.push(objectLocalStorage);
-            console.log(2, productsBought);
+
             const order = {
                 contact: {
                     firstName: inputName.value,
@@ -152,8 +146,6 @@ function checkFormAndPostRequest() {
                 .then((response) => response.json())
                 .then((data) => {
                     localStorage.clear();
-
-                    //  On peut commenter cette ligne pour vérifier le statut 201 de la requête fetch. Le fait de préciser la destination du lien ici et non dans la balise <a> du HTML permet d'avoir le temps de placer les éléments comme l'orderId dans le localStorage avant le changement de page.
                     document.location.href =
                         "confirmation.html?orderId=" + data.orderId;
                 })
@@ -163,8 +155,10 @@ function checkFormAndPostRequest() {
         }
     });
 }
+// fonction pour vérification du format de l'email
 function validateEmail(email) {
     const re =
         /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+
     return re.test(String(email).toLowerCase());
 }
