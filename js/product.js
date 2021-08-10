@@ -9,7 +9,7 @@ let cart = JSON.parse(localStorage.getItem("cart"));
 initCart();
 getArticle();
 
-// initie le local storage (tableau vide) si local storage n'existe pas
+// initie le local storage (tableau vide) si local storage n'existe pas mais si qq chose initie pas
 function initCart() {
     if (cart == null && cart == undefined) {
         cart = [];
